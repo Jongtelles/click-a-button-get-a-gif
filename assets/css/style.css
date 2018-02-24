@@ -28,3 +28,15 @@ h2 {
     color: rgb(255, 0, 98);
     font-family: 'Pacifico';
 }
+
+.gif {
+    -webkit-animation-duration: 0.55s;
+    -webkit-animation-delay: 0s;
+    -webkit-animation-iteration-count: 1;
+}
+
+#userInput {
+    -webkit-animation-duration: 0.85s;
+    -webkit-animation-delay: 0s;
+    -webkit-animation-iteration-count: 1;
+}

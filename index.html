@@ -4,41 +4,43 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>CABGAG - Click A Button, Get A Gif</title>
+    <title>CABGTG - Click A Button, Get Ten Gifs</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Pacifico" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
+    <!-- animate css file -->
+    <link rel="stylesheet" href="./assets/css/animate.min.css">
+    <!-- custom style sheet -->
     <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css">
 </head>
 
 <body>
+    <!-- bootstrap container -->
     <div class="container">
         <div class="row">
             <div class="col text-center">
-                <h1>CABGAG - Click A Button, Get A Gif</h1>
-                <h2>Food Edition</h2>
+                <h1>CABGTG - Click A Button, Get Ten Gifs</h1>
             </div>
         </div>
         <div class="row justify-content-center">
+            <!-- buttons rendered here by js -->
             <div id="btnsHere" class="justify-content-center"></div>
         </div>
+        <!-- user input div  -->
         <div class="row align-items-center justify-content-center">
             <div class="col-4">
-                <input id="userInput" class="form-control" type="text" placeholder="Add your own!">
+                <input id="userInput" class="form-control animated" type="text" placeholder="add your own! any word will work 😎">
             </div>
             <div class="col-2">
-                <button id="add" class="btn" type="submit">Add it!</button>
+                <button id="add" class="btn" type="submit">add it!</button>
             </div>
         </div>
-        <div class="row justify-content-center">
-            <h2>click to animate, click again to stop</h2>
+        <!-- info div -->
+        <div id="info" class="row justify-content-center temp">
         </div>
-
-    </div>
-    <div id="gifsGoHere" class="row justify-content-center">
-
-    </div>
+        <!-- gis are rendered here by js -->
+        <div id="gifsGoHere" class="row justify-content-center"></div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="assets/javascript/logic.js"></script>
