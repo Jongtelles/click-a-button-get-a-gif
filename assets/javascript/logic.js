@@ -81,7 +81,7 @@ $("#add").on("click", function () {
         $("#userInput").addClass("shake").one("animationend oAnimationEnd mozAnimationEnd webkitAnimationEnd", function () {
             $(this).removeClass("shake");
         });
-        $("#userInput").attr("placeholder", "please enter a food!");
+        $("#userInput").attr("placeholder", "please enter a word!");
         return;
     }
     topics.push(userInput);
