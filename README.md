@@ -1,2 +1,1 @@
-# click-a-button-get-a-gif
-Food edition
+# click-a-button-get-ten-gifs
