@@ -21,11 +21,12 @@ p {
 body {
     font-family: 'Indie Flower';
     background-image: url("../background.jpg");
+    background-size: cover;
 }
 
 h1,
 h2 {
-    color: rgb(255, 0, 98);
+    color: rgb(47, 255, 92);
     font-family: 'Pacifico';
 }
 

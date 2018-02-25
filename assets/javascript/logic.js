@@ -1,5 +1,5 @@
 var topics = ["grilled cheese", "tacos", "french fries", "fried chicken", "sushi", "chicken wings", "poached egg", "cheeseburger", "burrito"];
-
+// for loop that creates buttons from the topics array
 var buttonMaker = function () {
     for (var i = 0; i < topics.length; i++) {
         var button = $("<button>");
@@ -13,6 +13,7 @@ var buttonMaker = function () {
 // creates initial buttons
 buttonMaker();
 
+// document listener is necessary because new button elements are being created
 $(document).on("click", ".gifBtn", function () {
     event.preventDefault();
     // this conditional will run only once, alerting the user to click the gifs to get them to animate
@@ -31,7 +32,7 @@ $(document).on("click", ".gifBtn", function () {
             method: "GET"
         })
         .then(function (response) {
-            // make the gifs
+            // make the gifs and give them the data info that will be called later to toggle the gifs from animate and still
             var results = response.data;
             for (var i = 0; i < results.length; i++) {
                 if (results[i].rating !== "r") {
@@ -56,6 +57,7 @@ $(document).on("click", ".gifBtn", function () {
             }
         });
 });
+// another document listener because new elements are being created, changes gifs from animating to still with associated css.animate classes
 $(document).on("click", ".gif", function () {
     var state = $(this).attr("data-state");
     if (state === "still") {
@@ -72,18 +74,19 @@ $(document).on("click", ".gif", function () {
         $(this).attr("data-state", "still");
     }
 });
-// on click listener for our add button
+// on click listener for our button that adds new buttons
 $("#add").on("click", function () {
     event.preventDefault();
     var userInput = $("#userInput").val().toLowerCase();
     if (userInput == "") {
-        // after adding the class shake and triggering the css animate animation, wait for the end of the animation, then remove the shake class so it will be repeated when conditions are met (there's nothing in the userInput field)
+        // after adding the class shake and triggering the css animate animation, wait for the end of the animation, then remove the shake class so it will be repeated when conditions are met (if the button is clicked when there's nothing in the userInput field)
         $("#userInput").addClass("shake").one("animationend oAnimationEnd mozAnimationEnd webkitAnimationEnd", function () {
             $(this).removeClass("shake");
         });
         $("#userInput").attr("placeholder", "please enter a word!");
         return;
     }
+    // adds user input to the topics array, clears the DOM of the buttons and remakes the buttons with user's input
     topics.push(userInput);
     $("#btnsHere").empty();
     buttonMaker();
