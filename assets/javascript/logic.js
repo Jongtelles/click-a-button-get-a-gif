@@ -25,8 +25,7 @@ $(document).on("click", ".gifBtn", function () {
     // empty out gifs so they don't clutter the page
     $("#gifsGoHere").empty();
     var btnName = $(this).attr("data-name");
-    var queryUrl = "http://api.giphy.com/v1/gifs/search?q=" + btnName + "&api_key=5FSzsi9N2ELO4W6fF57lalA1rXicaxgG&limit=10&rating=pg";
-    // var queryUrl = "http://api.giphy.com/v1/gifs/random?api_key=5FSzsi9N2ELO4W6fF57lalA1rXicaxgG&limit=10&rating=pg&tag=" + btnName;
+    var queryUrl = "https://api.giphy.com/v1/gifs/search?q=" + btnName + "&api_key=5FSzsi9N2ELO4W6fF57lalA1rXicaxgG&limit=10&rating=pg";
     $.ajax({
             url: queryUrl,
             method: "GET"
@@ -39,7 +38,7 @@ $(document).on("click", ".gifBtn", function () {
                     var gifDiv = $("<div>");
                     var rating = results[i].rating;
                     var p = $("<p>").text("Rating: " + rating.toUpperCase());
-                    var foodGif = $('<img class="">');
+                    var foodGif = $('<img>');
                     foodGif.attr("src", results[i].images.fixed_height_still.url);
                     foodGif.attr("data-still", results[i].images.fixed_height_still.url);
                     foodGif.attr("data-animate", results[i].images.fixed_height.url);
